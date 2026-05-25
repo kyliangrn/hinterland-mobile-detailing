@@ -148,6 +148,48 @@
     item.addEventListener('focus', () => activate(item.dataset.target));
   });
 
+  // ░ Contact form — AJAX submit to Formspree ░
+  const form = $('.contact__form[data-ajax]');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      const label  = button.querySelector('.btn__label');
+      const success = form.querySelector('.form__success');
+      const error   = form.querySelector('.form__error');
+      success.hidden = true;
+      error.hidden = true;
+
+      const originalText = label.textContent;
+      label.textContent = 'Sending…';
+      button.disabled = true;
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          success.hidden = false;
+          label.textContent = 'Sent ✓';
+          setTimeout(() => { label.textContent = originalText; button.disabled = false; }, 2400);
+        } else {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body.error || 'Network error');
+        }
+      } catch (err) {
+        console.error('[form]', err);
+        error.hidden = false;
+        label.textContent = originalText;
+        button.disabled = false;
+      }
+    });
+  }
+
   // ░ Hash deep-linking to a service ░
   if (location.hash) {
     const id = location.hash.slice(1);

@@ -557,15 +557,20 @@
     </ul>
   </div>
 
-  <form class="contact__form" onsubmit="event.preventDefault(); this.querySelector('.form__success').hidden=false;">
+  <form class="contact__form" action="https://formspree.io/f/mvzybdnz" method="POST" data-ajax>
+    <!-- Formspree configuration -->
+    <input type="hidden" name="_subject" value="New quote request — Hinterland Mobile Detailing" />
+    <!-- Honeypot anti-spam (hidden from humans) -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+
     <div class="field-row">
       <label class="field">
         <span>First name</span>
-        <input type="text" name="first" required autocomplete="given-name" />
+        <input type="text" name="first_name" required autocomplete="given-name" />
       </label>
       <label class="field">
         <span>Last name</span>
-        <input type="text" name="last" required autocomplete="family-name" />
+        <input type="text" name="last_name" required autocomplete="family-name" />
       </label>
     </div>
 
@@ -610,12 +615,16 @@
     </label>
 
     <button class="btn btn--primary btn--full" type="submit">
-      Send my request
+      <span class="btn__label">Send my request</span>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </button>
 
     <p class="form__success" hidden>
       Thanks — your request is on its way. We'll be in touch shortly.
+    </p>
+    <p class="form__error" hidden>
+      Something went wrong. Please email us directly at
+      <a href="mailto:hinterlandmobiledetailing@gmail.com">hinterlandmobiledetailing@gmail.com</a>.
     </p>
   </form>
 </section>

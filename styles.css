@@ -967,7 +967,20 @@ body::before {
   margin-top: 12px; padding: 14px 18px;
   background: var(--green); color: var(--beige);
   border-radius: var(--rad-sm); font-size: 14px;
+  animation: fade-in .4s var(--ease);
 }
+.form__error {
+  margin-top: 12px; padding: 14px 18px;
+  background: #7a1f1f; color: var(--beige);
+  border-radius: var(--rad-sm); font-size: 14px;
+  animation: fade-in .4s var(--ease);
+}
+.form__error a { text-decoration: underline; }
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+button[disabled] { opacity: .7; cursor: wait; }
 
 /* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    FOOTER
