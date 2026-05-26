@@ -844,20 +844,20 @@ body::before {
 }
 .area__hero {
   position: relative;
-  aspect-ratio: 16/7;
-  max-height: 640px;
+  height: clamp(180px, 26vh, 280px);
   overflow: hidden;
   background: var(--green-ink);
 }
 .area__hero img {
   width: 100%; height: 100%; object-fit: cover;
-  object-position: center 40%;
+  object-position: center 45%;
   will-change: transform;
+  opacity: 0.55;
 }
 .area__hero-overlay {
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, transparent 60%, rgba(15,36,24,0.18) 100%);
+    linear-gradient(180deg, rgba(15,36,24,0.55) 0%, rgba(15,36,24,0.35) 50%, rgba(15,36,24,0.65) 100%);
   pointer-events: none;
 }
 .marquee {
@@ -907,6 +907,11 @@ body::before {
 .section-head--center .section-title { max-width: none; margin-left: auto; margin-right: auto; }
 .section-head--center .section-lede { margin-left: auto; margin-right: auto; }
 
+.booking__title {
+  font-size: clamp(28px, 3.6vw, 48px) !important;
+}
+.booking__head .section-lede { font-size: 15px; }
+
 .booking__embed {
   max-width: 1100px;
   margin: 0 auto;
@@ -917,26 +922,6 @@ body::before {
   position: relative;
   border: 1px solid var(--line);
 }
-.booking__loading {
-  position: absolute;
-  inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  gap: 12px;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  pointer-events: none;
-  z-index: 1;
-}
-.booking__loading .dot {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--green);
-  animation: pulse 1.6s infinite;
-}
-/* Hide loader once Calendly mounts */
-.calendly-inline-widget iframe { position: relative; z-index: 2; background: var(--beige); }
-.calendly-inline-widget { position: relative; z-index: 2; }
-
 .calendly-inline-widget { width: 100%; }
 
 .booking__alt {
