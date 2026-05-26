@@ -867,8 +867,8 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 100%;
-  opacity: 0.55;
+  object-position: 50% 65%;
+  opacity: 0.6;
 }
 .area__hero-overlay {
   position: absolute; inset: 0;
@@ -931,12 +931,8 @@ body::before {
 .booking__embed {
   max-width: 1100px;
   margin: 0 auto;
-  border-radius: var(--rad-lg);
-  overflow: hidden;
   background: var(--beige);
-  box-shadow: var(--shadow-soft);
   position: relative;
-  border: 1px solid var(--line);
 }
 .calendly-inline-widget { width: 100%; }
 
