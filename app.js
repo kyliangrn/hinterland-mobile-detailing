@@ -97,8 +97,8 @@
 
   // ░ Parallax — hero image + area image ░
   const parallaxTargets = [
-    { el: $('.hero__media img'), strength: 0.15 },
-    { el: $('.area__hero img'), strength: 0.12 }
+    { el: $('.hero__media img'), strength: 0.15, scale: 1.04 },
+    { el: $('.area__hero img'), strength: 0.06, scale: 1.00 }
   ].filter(t => t.el);
 
   if (parallaxTargets.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -107,11 +107,11 @@
       if (pTicking) return;
       pTicking = true;
       requestAnimationFrame(() => {
-        parallaxTargets.forEach(({ el, strength }) => {
+        parallaxTargets.forEach(({ el, strength, scale }) => {
           const rect = el.parentElement.getBoundingClientRect();
           if (rect.bottom < 0 || rect.top > window.innerHeight) { pTicking = false; return; }
           const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * strength;
-          el.style.transform = `translate3d(0, ${-offset}px, 0) scale(1.04)`;
+          el.style.transform = `translate3d(0, ${-offset}px, 0) scale(${scale})`;
         });
         pTicking = false;
       });
