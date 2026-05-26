@@ -1206,7 +1206,15 @@ button[disabled] { opacity: .7; cursor: wait; }
   .hero__scroll { display: none; }
 
   .values__grid { grid-template-columns: 1fr; }
-  .value { padding: 28px 0 !important; border-left: none !important; border-right: none !important; }
+  .value {
+    padding: 28px 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .ambient__media, .about__media { display: none; }
+  .ambient__grid, .about { grid-template-columns: 1fr; }
 
   .featured__grid { grid-template-columns: 1fr; }
   .feature-card--tall { grid-column: auto; }
