@@ -867,7 +867,7 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 0%;
+  object-position: 50% 60%;
   opacity: 0.6;
 }
 .area__hero-overlay {
