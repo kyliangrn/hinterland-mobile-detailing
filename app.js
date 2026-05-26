@@ -97,8 +97,7 @@
 
   // ░ Parallax — hero image + area image ░
   const parallaxTargets = [
-    { el: $('.hero__media img'), strength: 0.15, scale: 1.04 },
-    { el: $('.area__hero img'), strength: 0.06, scale: 1.00 }
+    { el: $('.hero__media img'), strength: 0.15, scale: 1.04 }
   ].filter(t => t.el);
 
   if (parallaxTargets.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

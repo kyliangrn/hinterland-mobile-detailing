@@ -637,7 +637,7 @@ body::before {
   visibility: hidden;
   transition: opacity .55s var(--ease), visibility 0s .55s;
   display: grid;
-  grid-template-rows: 48% 1fr;
+  grid-template-rows: 50% 1fr;
 }
 .cat-card.is-active {
   opacity: 1;
@@ -648,19 +648,18 @@ body::before {
 .cat-card__media {
   position: relative;
   overflow: hidden;
-  background: var(--green-ink);
+  background: var(--beige-2);
 }
 .cat-card__media img {
-  width: 100%; height: 100%; object-fit: cover;
-  object-position: center 40%;
-  transform: scale(1);
-  transition: transform 1.6s var(--ease);
+  width: 100%; height: 100%; object-fit: contain;
+  object-position: center;
+  transition: opacity .6s var(--ease);
 }
-.cat-card.is-active .cat-card__media img { transform: scale(1.02); }
 .cat-card__media::after {
   content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(15,36,24,0.55) 100%);
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 40%;
+  background: linear-gradient(180deg, transparent 0%, rgba(15,36,24,0.25) 100%);
   pointer-events: none;
 }
 .cat-card__chip {
@@ -774,11 +773,10 @@ body::before {
 }
 .ambient__media img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transition: transform 1.4s var(--ease);
+  transition: opacity .4s var(--ease);
 }
-.ambient__media:hover img { transform: scale(1.03); }
 
 /* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    ABOUT
@@ -794,17 +792,17 @@ body::before {
 }
 .about__media {
   position: relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
   border-radius: var(--rad-lg);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+  background: var(--beige-2);
 }
 .about__media img {
-  width: 100%; height: 100%; object-fit: cover;
-  object-position: center 35%;
-  transition: transform 1.4s var(--ease);
+  width: 100%; height: 100%; object-fit: contain;
+  object-position: center;
+  transition: opacity .4s var(--ease);
 }
-.about__media:hover img { transform: scale(1.03); }
 
 @media (max-width: 1024px) {
   .about__media { aspect-ratio: 3/2; max-width: 720px !important; }
@@ -838,19 +836,20 @@ body::before {
 }
 .area__hero {
   position: relative;
-  height: clamp(380px, 60vh, 640px);
+  height: clamp(420px, 65vh, 720px);
   overflow: hidden;
+  background: var(--beige-2);
 }
 .area__hero img {
-  width: 100%; height: 115%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: contain;
   object-position: center;
   will-change: transform;
 }
 .area__hero-overlay {
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, transparent 30%, rgba(15,36,24,0.55) 100%),
-    linear-gradient(180deg, rgba(245,242,232,0.5) 0%, transparent 25%);
+    linear-gradient(180deg, transparent 60%, rgba(15,36,24,0.18) 100%);
+  pointer-events: none;
 }
 .marquee {
   overflow: hidden;
