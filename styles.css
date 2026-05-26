@@ -893,6 +893,73 @@ body::before {
 }
 
 /* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   BOOKING (Calendly inline embed)
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
+.booking {
+  background: var(--beige);
+  padding: var(--pad-y) var(--pad-x);
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+.section-head--center {
+  text-align: center;
+}
+.section-head--center .section-title { max-width: none; margin-left: auto; margin-right: auto; }
+.section-head--center .section-lede { margin-left: auto; margin-right: auto; }
+
+.booking__embed {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: var(--rad-lg);
+  overflow: hidden;
+  background: var(--beige);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  border: 1px solid var(--line);
+}
+.booking__loading {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  pointer-events: none;
+  z-index: 1;
+}
+.booking__loading .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+  animation: pulse 1.6s infinite;
+}
+/* Hide loader once Calendly mounts */
+.calendly-inline-widget iframe { position: relative; z-index: 2; background: var(--beige); }
+.calendly-inline-widget { position: relative; z-index: 2; }
+
+.calendly-inline-widget { width: 100%; }
+
+.booking__alt {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.booking__alt a {
+  color: var(--green);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  margin-left: 4px;
+  transition: color .3s var(--ease);
+}
+.booking__alt a:hover { color: var(--green-deep); }
+
+@media (max-width: 760px) {
+  .calendly-inline-widget { height: 1000px !important; }
+}
+
+/* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    CONTACT
    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
 .contact {

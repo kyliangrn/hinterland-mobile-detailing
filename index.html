@@ -28,9 +28,10 @@
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#area">Service Area</a>
+    <a href="#book">Book</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a href="#contact" class="btn btn--ghost btn--small nav__cta">Request a Quote</a>
+  <a href="#book" class="btn btn--ghost btn--small nav__cta">Book a Slot</a>
   <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -62,7 +63,7 @@
     </p>
 
     <div class="hero__ctas reveal" style="--d:.7s">
-      <a href="#contact" class="btn btn--primary">Book a Detail
+      <a href="#book" class="btn btn--primary">Book a Detail
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
       <a href="#services" class="btn btn--link">Explore services</a>
@@ -533,10 +534,39 @@
   <p class="area__note">Servicing the Sunshine Coast Hinterland and beyond on request.</p>
 </section>
 
+<!-- ░░ BOOKING (Calendly inline) ░░ -->
+<section class="booking" id="book">
+  <header class="section-head section-head--center">
+    <span class="section-num">05</span>
+    <p class="eyebrow">Book your slot</p>
+    <h2 class="section-title serif">
+      Pick a time that suits.<br/>
+      <em class="italic">We'll bring the detail to you.</em>
+    </h2>
+    <p class="section-lede">Choose a 30 minute appointment that works for you. Confirmed instantly. We come straight to your driveway.</p>
+  </header>
+
+  <div class="booking__embed">
+    <div class="booking__loading">
+      <span class="dot"></span>
+      <span>Loading calendar…</span>
+    </div>
+    <div class="calendly-inline-widget"
+         data-url="https://calendly.com/hinterland-mobile-detailing/30min?hide_gdpr_banner=1&background_color=f5f2e8&text_color=0e0f0d&primary_color=016531"
+         style="min-width:320px;height:720px;"></div>
+  </div>
+
+  <p class="booking__alt">
+    Prefer a custom quote first?
+    <a href="#contact">Send us a request instead →</a>
+  </p>
+</section>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+
 <!-- ░░ CONTACT ░░ -->
 <section class="contact" id="contact">
   <div class="contact__intro">
-    <span class="section-num section-num--light">05</span>
+    <span class="section-num section-num--light">06</span>
     <p class="eyebrow eyebrow--light">Get in touch</p>
     <h2 class="section-title serif light">
       Let's get your car<br/>
@@ -658,6 +688,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#area">Service area</a></li>
+        <li><a href="#book">Book a slot</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
