@@ -729,6 +729,15 @@ body::before {
   content: ""; position: absolute; left: 0; top: 9px;
   width: 8px; height: 1px; background: rgba(245,242,232,0.6);
 }
+.cat-card__list li.cat-card__sep {
+  grid-column: 1 / -1;
+  padding-left: 0;
+  margin: 6px 0 2px;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(245,242,232,0.55);
+}
+.cat-card__list li.cat-card__sep::before { display: none; }
 .cat-card.is-active .cat-card__list li {
   animation: stagger-in .6s var(--ease) both;
 }
